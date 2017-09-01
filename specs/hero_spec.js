@@ -14,12 +14,12 @@ describe("Hero", function() {
 
 
   beforeEach(function(){
-    food1 = new Food ("curry", 10, false);
+    food1 = new Food ("curry", 10);
     hero1 = new Hero ("Micky", 10, "curry");
-    food2 = new Food ("veggie", 10, false);
-    food3 = new Food ("veggie", 10, true);
-    task1 = new Task ("swim", 8, "low", 5, false);
-    task2 = new Task ("walk", 9, "high", 6, true);
+    food2 = new Food ("veggie", 10);
+    food3 = new Food ("veggie", 10);
+    task1 = new Task ("swim", 8, "low", 5);
+    task2 = new Task ("walk", 9, "high", 6);
   }),
 
   it("has a name", function(){
@@ -53,14 +53,28 @@ describe("Hero", function() {
   }),
 
   it("can eat poisoned food and the health level goes down by the food's replenishmentValue", function() {
+    food3.poisoned()
     hero1.eatFood(food3);
     assert.strictEqual(hero1.health, 0);
   }),
 
-  it("should be able to sort their tasks by difficulty, urgency or reward", function() {
-    
+  it("should be able to sort their tasks by difficulty", function() {
+
 
   }),
+
+  
+
+  it("should be able to sort their tasks by urgency", function() {
+
+
+  }),
+
+  it("should be able to sort their tasks by reward", function() {
+
+
+  }),
+  
 
   it("should be able to view tasks that are marked as completed or incomplete", function() {
     hero1.addTask(task1);

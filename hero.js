@@ -12,10 +12,24 @@ Hero.prototype = {
   return this.name;
  },
 
+ sortTaskByDifficulty: function() {
+  
+ },
+
+ sortTaskByUrgency: function() {
+
+ },
+
+ sortTaskByReward: function() {
+
+ },
+
+ 
+
  eatFood: function(food) {
    if (food.poisonousStatus === false && food.name !== this.favouriteFood) {
      this.health += food.replenishmentValue;
-   } else if (food.poisonousStatus === false && food.name === this.favouriteFood){
+   } else if (!food.poisonousStatus && food.name === this.favouriteFood){
      this.health += (food.replenishmentValue * 1.5);
    } else {
      this.health -= food.replenishmentValue;
