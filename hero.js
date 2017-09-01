@@ -13,18 +13,29 @@ Hero.prototype = {
  },
 
  sortTaskByDifficulty: function() {
-  
+   this.tasks.sort(function(a, b) {
+    return a.difficulty - b.difficulty; 
+   })
  },
 
  sortTaskByUrgency: function() {
-
+    this.tasks.sort(function(a, b) {
+      if (a.urgency === b.urgency) {
+        return 0;
+      } else if (a.urgency === "high" && b.urgency === "low") {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
  },
 
  sortTaskByReward: function() {
-
+  this.tasks.sort(function(a, b) {
+   return a.reward - b.reward; 
+  })
  },
 
- 
 
  eatFood: function(food) {
    if (food.poisonousStatus === false && food.name !== this.favouriteFood) {

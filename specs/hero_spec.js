@@ -18,8 +18,8 @@ describe("Hero", function() {
     hero1 = new Hero ("Micky", 10, "curry");
     food2 = new Food ("veggie", 10);
     food3 = new Food ("veggie", 10);
-    task1 = new Task ("swim", 8, "low", 5);
-    task2 = new Task ("walk", 9, "high", 6);
+    task1 = new Task ("swim", 8, "high", 5);
+    task2 = new Task ("walk", 9, "low", 6);
   }),
 
   it("has a name", function(){
@@ -59,22 +59,26 @@ describe("Hero", function() {
   }),
 
   it("should be able to sort their tasks by difficulty", function() {
-
-
+    hero1.addTask(task1);
+    hero1.addTask(task2);
+    hero1.sortTaskByDifficulty();
+    assert.deepStrictEqual(hero1.tasks[0], task1);
   }),
 
-  
-
   it("should be able to sort their tasks by urgency", function() {
-
-
+    hero1.addTask(task1);
+    hero1.addTask(task2);
+    hero1.sortTaskByUrgency();
+    assert.deepStrictEqual(hero1.tasks[0], task1);
   }),
 
   it("should be able to sort their tasks by reward", function() {
-
-
+    hero1.addTask(task1);
+    hero1.addTask(task2);
+    hero1.sortTaskByReward();
+    assert.deepStrictEqual(hero1.tasks[0], task1)
   }),
-  
+
 
   it("should be able to view tasks that are marked as completed or incomplete", function() {
     hero1.addTask(task1);
